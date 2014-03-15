@@ -19,7 +19,7 @@ Bundle "nathanaelkane/vim-indent-guides"
 Bundle "digitaltoad/vim-jade"
 Bundle "groenewege/vim-less"
 Bundle "tpope/vim-markdown"
-Bundle "Lokaltog/powerline"
+Bundle "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim/'}
 Bundle "tpope/vim-rails"
 Bundle "tristen/vim-sparkup"
 Bundle "tpope/vim-surround"
