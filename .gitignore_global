@@ -1,1 +1,9 @@
-.gitignore_global
+# Mac shit
+.DS_Store
+
+# Vim history files
+*.un~
+*.swp
+
+# netrw history 
+.netrwhist
