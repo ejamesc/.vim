@@ -84,7 +84,7 @@ set formatoptions=qrn1
 "set colorcolumn=85
 
 set list
-set listchars=tab:❘-
+set listchars=tab:\|\ 
 
 "Parenthesis Completion
 inoremap {<CR>  {<CR>}<Esc>O
