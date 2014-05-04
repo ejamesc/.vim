@@ -26,9 +26,9 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Set Go variables
-export GOPATH=/usr/local/bin/go
-export PATH=$PATH:$GOROOT/bin
+export GOROOT=/usr/local/Cellar/go/1.2/libexec
 export GOPATH=~/Projects/gocode
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Set aliases
 alias webfac="ssh shadowsun7@shadowsun7.webfactional.com"
