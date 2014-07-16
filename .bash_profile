@@ -13,6 +13,11 @@ export PATH=/usr/local/share/python:$PATH
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 
+# Virtualenv settings
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
+
 # Enable brew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
@@ -30,6 +35,10 @@ export GOROOT=/usr/local/Cellar/go/1.2/libexec
 export GOPATH=~/Projects/gocode
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+# Sencha
+export PATH=/Users/cedric/bin/Sencha/Cmd/5.0.0.160:$PATH
+export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
+
 # Set aliases
 alias webfac="ssh shadowsun7@shadowsun7.webfactional.com"
 alias fcs="ssh developer@wtheo.com"
@@ -42,3 +51,5 @@ alias bil="bi --local"
 alias bu="b update"
 alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+
+alias dnsclear="sudo killall -HUP mDNSResponder"
