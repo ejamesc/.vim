@@ -16,7 +16,7 @@ test -f ~/.bashrc && source ~/.bashrc
 # Load in the git branch prompt script
 source ~/.vim/.git-prompt.sh
 # Set git branch display
-export PS1="\h:\[\033[32m\] \[\033[34;1m\]\W\[\033[m\] \[\e[32;1m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0m\]\$ "
+export PS1="\h: \[\033[34;1m\]\W\[\033[m\] \[\e[32;1m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0m\]\$ "
 
 # Virtualenv settings
 export WORKON_HOME=$HOME/.virtualenvs
