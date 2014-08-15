@@ -13,6 +13,11 @@ export PATH=/usr/local/share/python:$PATH
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 
+# Load in the git branch prompt script
+source ~/.vim/.git-prompt.sh
+# Set git branch display
+export PS1="\h:\[\033[32m\] \[\033[34;1m\]\W\[\033[m\] \[\e[32;1m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0m\]\$ "
+
 # Virtualenv settings
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
@@ -42,7 +47,6 @@ export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
 # Set aliases
 alias webfac="ssh shadowsun7@shadowsun7.webfactional.com"
 alias fcs="ssh developer@wtheo.com"
-alias tembu="ssh a0052147@tembusu.nus.edu.sg"
 alias test_fcs="ssh cedric@106.186.24.119 -p 1010" 
 
 alias b="bundle"
@@ -53,3 +57,4 @@ alias be="b exec"
 alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias dnsclear="sudo killall -HUP mDNSResponder"
+alias rds="redis-server /usr/local/etc/redis.conf"
