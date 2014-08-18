@@ -16,7 +16,7 @@ test -f ~/.bashrc && source ~/.bashrc
 # Load in the git branch prompt script
 source ~/.vim/.git-prompt.sh
 # Set git branch display
-export PS1="\h: \[\033[34;1m\]\W\[\033[m\] \[\e[32;1m\](\$(git branch 2>/dev/null | grep '^*' | colrm 1 2))\[\e[0m\]\$ "
+export PS1="\h: \[\033[34;1m\]\W\[\033[m\]\[\e[32;1m\]|\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\e[0m\]\$ "
 
 # Virtualenv settings
 export WORKON_HOME=$HOME/.virtualenvs
@@ -29,7 +29,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 # Set the default ruby via chruby
-chruby ruby-2.1.0
+chruby ruby-2.1.2
 
 # Set colors 
 export CLICOLOR=1

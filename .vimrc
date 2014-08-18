@@ -109,7 +109,7 @@ let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
 
-"Setting ack.vim to use age
+"Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 set bs=2
