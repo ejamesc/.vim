@@ -120,7 +120,7 @@ au FileType go au BufWritePre <buffer> GoFmt
 
 "Easytags setup
 "Set Easytags to save to .tags in the local folder
-set tags=./.tags
+set tags=./tags
 "Create the local tag file if not exist
 let g:easytags_dynamic_files=2
 "Run Easytags async
