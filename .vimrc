@@ -113,7 +113,14 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-"ctags setup
+
+"Easytags setup
+"Set Easytags to save to .tags in the local folder
+set tags=./.tags
+"Create the local tag file if not exist
+let g:easytags_dynamic_files=2
+"Run Easytags async
+let g:easytags_async=1
 au FileType *.go,*.js,*.py,*.rb BufWritePost UpdateTags
 
 set bs=2

@@ -7,3 +7,6 @@
 
 # netrw history 
 .netrwhist
+
+# ctags generated shit
+.tags
