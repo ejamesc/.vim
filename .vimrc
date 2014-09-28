@@ -24,6 +24,8 @@ Bundle "tpope/vim-rails"
 Bundle "tristen/vim-sparkup"
 Bundle "tpope/vim-surround"
 Bundle "altercation/vim-colors-solarized"
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-easytags"
 
 " .vimrc commands
 filetype plugin indent on
@@ -39,9 +41,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
-" Indentation for Python
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
 set encoding=utf-8
 set scrolloff=3
@@ -92,11 +91,13 @@ inoremap {<CR>  {<CR>}<Esc>O
 "Leader functions
 nnoremap <leader>v V`]
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
-"leader w now opens a new vsplit and shifts focus
+"Opens a new vsplit and shifts focus
 nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+"Opens a split and shifts focus
+nnoremap <leader>s <C-w>s
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>a :Ack 
+nnoremap <leader>g :Git 
 
 "Split options
 set splitbelow
@@ -112,9 +113,15 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+"ctags setup
+au FileType *.go,*.js,*.py,*.rb BufWritePost UpdateTags
+
 set bs=2
-"set smartindent
+"Indentation for Python
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
+"Set smartindent
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+"Prolog file detection, because Razvan
 au BufRead,BufNewFile *.pro set filetype=prolog
 let g:Powerline_symbols = 'fancy'
 
