@@ -1,31 +1,31 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Vundle bundles
-Bundle "mileszs/ack.vim"
-Bundle "kien/ctrlp.vim"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/syntastic"
-Bundle "kchmck/vim-coffee-script"
-Bundle "tpope/vim-fugitive"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "digitaltoad/vim-jade"
-Bundle "groenewege/vim-less"
-Bundle "tpope/vim-markdown"
-Bundle "Lokaltog/powerline", {'rtp': 'powerline/bindings/vim/'}
-Bundle "tpope/vim-rails"
-Bundle "tristen/vim-sparkup"
-Bundle "tpope/vim-surround"
-Bundle "altercation/vim-colors-solarized"
-Bundle "xolox/vim-misc"
-Bundle "xolox/vim-easytags"
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-fugitive'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-markdown'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'tpope/vim-rails'
+Plugin 'tristen/vim-sparkup'
+Plugin 'tpope/vim-surround'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+call vundle#end()
 
 " .vimrc commands
 filetype plugin indent on
