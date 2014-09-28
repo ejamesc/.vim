@@ -25,6 +25,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
+Plugin 'fatih/vim-go'
+
 call vundle#end()
 
 " .vimrc commands
@@ -113,6 +115,8 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+"Run go fmt after save
+au FileType go au BufWritePre <buffer> GoFmt
 
 "Easytags setup
 "Set Easytags to save to .tags in the local folder
