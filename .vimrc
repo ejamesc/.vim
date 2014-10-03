@@ -125,7 +125,7 @@ set tags=./tags
 let g:easytags_dynamic_files=2
 "Run Easytags async
 let g:easytags_async=1
-au FileType *.go,*.js,*.py,*.rb BufWritePost UpdateTags
+au FileType *.go,*.js,*.py,*.rb,*.php BufWritePost UpdateTags
 
 set bs=2
 "Indentation for Python
