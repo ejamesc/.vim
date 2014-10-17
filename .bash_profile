@@ -36,18 +36,16 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # Set Go variables
-export GOROOT=/usr/local/Cellar/go/1.2/libexec
 export GOPATH=~/Projects/gocode
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 
 # Sencha
-export PATH=/Users/cedric/bin/Sencha/Cmd/5.0.0.160:$PATH
+export PATH=$PATH:/Users/cedric/bin/Sencha/Cmd/5.0.0.160
 export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
 
 # Set aliases
 alias webfac="ssh shadowsun7@shadowsun7.webfactional.com"
-alias fcs="ssh developer@wtheo.com"
-alias test_fcs="ssh cedric@106.186.24.119 -p 1010" 
+alias fcs="ssh developer@wtheo.com -p 1012"
 
 alias b="bundle"
 alias bi="b install --path vendor"
