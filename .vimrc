@@ -100,6 +100,14 @@ nnoremap <leader>s <C-w>s
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>a :Ack 
 nnoremap <leader>g :Git 
+" Go leader functions
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+"Display type information for word under cursor
+au FileType go nmap <Leader>i <Plug>(go-info)
+"Displays interfaces that are implemented by word under cursor
+au FileType go nmap <Leader>s <Plug>(go-implements)
 
 "Split options
 set splitbelow
@@ -115,8 +123,10 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-"Run go fmt after save
-au FileType go au BufWritePre <buffer> GoFmt
+"Go modifications
+"Automatically run goimports to add imports post-save
+let g:go_fmt_command = "goimports"
+
 
 "Easytags setup
 "Set Easytags to save to .tags in the local folder
