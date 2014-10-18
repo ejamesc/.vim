@@ -107,7 +107,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 "Display type information for word under cursor
 au FileType go nmap <Leader>i <Plug>(go-info)
 "Displays interfaces that are implemented by word under cursor
-au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>n <Plug>(go-implements)
 
 "Split options
 set splitbelow
