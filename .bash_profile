@@ -56,3 +56,5 @@ alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias dnsclear="sudo killall -HUP mDNSResponder"
 alias rds="redis-server /usr/local/etc/redis.conf"
+alias rethinkdb.start='launchctl load /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
+alias rethinkdb.stop='launchctl unload /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
