@@ -44,8 +44,7 @@ export PATH=$PATH:/Users/cedric/bin/Sencha/Cmd/5.0.0.160
 export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
 
 # Set aliases
-alias webfac="ssh shadowsun7@shadowsun7.webfactional.com"
-alias fcs="ssh developer@wtheo.com -p 1012"
+alias webfac="ssh webfac"
 
 alias b="bundle"
 alias bi="b install --path vendor"
