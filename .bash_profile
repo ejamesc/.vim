@@ -45,6 +45,7 @@ export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
 
 # Set aliases
 alias webfac="ssh webfac"
+alias fcs="ssh fcs"
 
 alias b="bundle"
 alias bi="b install --path vendor"
