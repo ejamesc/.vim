@@ -17,6 +17,7 @@ test -f ~/.bashrc && source ~/.bashrc
 source ~/.vim/.git-prompt.sh
 # Set git branch display
 export PS1="\h: \[\033[34;1m\]\W\[\033[m\]\[\e[32;1m\]|\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[\e[0m\]\$ "
+#export PROMPT_COMMAND='__git_ps1 "\u@\h:\w" "\\\$ "'
 
 # Virtualenv settings
 export WORKON_HOME=$HOME/.virtualenvs
@@ -58,3 +59,4 @@ alias dnsclear="sudo killall -HUP mDNSResponder"
 alias rds="redis-server /usr/local/etc/redis.conf"
 alias rethinkdb.start='launchctl load /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
 alias rethinkdb.stop='launchctl unload /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
+alias ns='nosetests -sd'

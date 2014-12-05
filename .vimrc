@@ -123,27 +123,37 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-"Go modifications
-"Automatically run goimports to add imports post-save
+" Go modifications
+" Automatically run goimports to add imports post-save
 let g:go_fmt_command = "goimports"
 
+" Python modifications
+" Smart indenting
+autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+" Wrap at 72 chars for comments.
+autocmd FileType python setlocal formatoptions=cq textwidth=79 foldignore= wildignore+=*.py[co]
+"Indentation for Python
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
 
-"Easytags setup
-"Set Easytags to save to .tags in the local folder
+" Sparkup
+let g:sparkupExecuteMapping = '<C-e>'
+let g:sparkupNextMapping = '<C-n>'
+
+" Easytags setup
+" Set Easytags to save to .tags in the local folder
 set tags=./tags
-"Create the local tag file if not exist
+" Create the local tag file if not exist
 let g:easytags_dynamic_files=2
-"Run Easytags async
+" Run Easytags async
 let g:easytags_async=1
 au FileType *.go,*.js,*.py,*.rb,*.php BufWritePost UpdateTags
 
 set bs=2
-"Indentation for Python
-autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4
-"Set smartindent
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-"Prolog file detection, because Razvan
+
+" Prolog file detection, because Razvan
 au BufRead,BufNewFile *.pro set filetype=prolog
+
+" Powerline settings
 let g:Powerline_symbols = 'fancy'
 
 function! s:swap_lines(n1, n2)
@@ -179,6 +189,4 @@ noremap <silent> <c-j> :call <SID>swap_down()<CR>
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
-let g:sparkupExecuteMapping = '<C-e>'
-let g:sparkupNextMapping = '<C-n>'
 
