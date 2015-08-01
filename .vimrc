@@ -34,7 +34,9 @@ filetype plugin indent on
 
 " Load specific solarized settings
 syntax on
-runtime solarized.vimrc
+set background=dark
+colorscheme solarized
+"runtime solarized.vimrc
 
 scriptencoding utf-8
 set modelines=0
@@ -123,9 +125,16 @@ let g:syntastic_warning_symbol = '!'
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+
 " Go modifications
 " Automatically run goimports to add imports post-save
 let g:go_fmt_command = "goimports"
+
+"Set ctrl-p to ignore Godeps folder
+let g:ctrlp_custom_ignore = {
+  \  'dir': 'Godeps$',
+  \  'file': '\w*[\/]tags$',
+  \ }
 
 " Python modifications
 " Smart indenting
