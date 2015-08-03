@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Vundle bundles
 Plugin 'mileszs/ack.vim'
@@ -28,7 +28,6 @@ Plugin 'xolox/vim-easytags'
 Plugin 'fatih/vim-go'
 
 call vundle#end()
-
 " .vimrc commands
 filetype plugin indent on
 
@@ -102,6 +101,7 @@ nnoremap <leader>s <C-w>s
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>a :Ack 
 nnoremap <leader>g :Git 
+
 " Go leader functions
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -110,6 +110,7 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>i <Plug>(go-info)
 "Displays interfaces that are implemented by word under cursor
 au FileType go nmap <Leader>n <Plug>(go-implements)
+au FileType go nmap <Leader>e <Plug>(go-rename)
 
 "Split options
 set splitbelow
@@ -124,7 +125,6 @@ let g:syntastic_warning_symbol = '!'
 
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
 
 " Go modifications
 " Automatically run goimports to add imports post-save
