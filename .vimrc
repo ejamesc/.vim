@@ -122,6 +122,8 @@ let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '!'
+" We redirect output of go build to a tmpdir
+let g:syntastic_go_go_build_args = "-o $TMPDIR"
 
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
