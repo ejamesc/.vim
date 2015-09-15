@@ -12,7 +12,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'digitaltoad/vim-jade'
@@ -26,6 +25,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'fatih/vim-go'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'elzr/vim-json'
+Plugin 'majutsushi/tagbar'
+Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()
 " .vimrc commands
@@ -100,7 +105,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s
 nnoremap <leader>nt :NERDTreeToggle<cr>
 nnoremap <leader>a :Ack 
-nnoremap <leader>g :Git 
 
 " Go leader functions
 au FileType go nmap <leader>b <Plug>(go-build)
@@ -115,6 +119,16 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 "Split options
 set splitbelow
 set splitright
+
+"Javascript options
+let javascript_enable_domhtmlcss = 1
+nnoremap <leader>ji :TernType<cr>
+"Allows you to jump to def using Tern's engine
+nnoremap <leader>k :TernDef<cr>
+nnoremap <leader>je :TernRename<cr>
+
+"Tagbar options
+nmap <leader>h :TagbarToggle<CR>
 
 "Syntastic options
 let g:syntastic_javascript_checkers = ['jshint']
@@ -158,6 +172,15 @@ let g:easytags_dynamic_files=2
 " Run Easytags async
 let g:easytags_async=1
 au FileType *.go,*.js,*.py,*.rb,*.php BufWritePost UpdateTags
+let g:easytags_languages = {
+      \   'javascript': {
+      \     'cmd': '/usr/local/bin/jsctags',
+      \       'args': [],
+      \       'fileoutput_opt': '-f',
+      \       'stdout_opt': '-f-',
+      \       'recurse_flag': '-R'
+      \   }
+      \}
 
 set bs=2
 

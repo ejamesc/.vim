@@ -8,6 +8,7 @@
 export ARCHFLAGS="-arch x86_64"
 # Ensure user-installed binaries take precedence
 export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 # Ensure Python shit is usable
 # export PATH=/usr/local/share/python:$PATH
 # Load .bashrc if it exists
@@ -44,6 +45,10 @@ export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:/Users/cedric/bin/Sencha/Cmd/5.0.0.160
 export SENCHA_CMD_3_0_0="/Users/cedric/bin/Sencha/Cmd/5.0.0.160"
 
+# Set locales, needed for some OSS projects
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Set aliases
 alias webfac="ssh webfac"
 alias fcs="ssh fcs"
@@ -57,6 +62,4 @@ alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 
 alias dnsclear="sudo killall -HUP mDNSResponder"
 alias rds="redis-server /usr/local/etc/redis.conf"
-alias rethinkdb.start='launchctl load /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
-alias rethinkdb.stop='launchctl unload /usr/local/opt/rethinkdb/homebrew.mxcl.rethinkdb.plist'
 alias ns='nosetests -sd'
