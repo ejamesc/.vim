@@ -27,10 +27,11 @@ Plugin 'xolox/vim-easytags'
 Plugin 'fatih/vim-go'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
-Plugin 'vim-scripts/JavaScript-Indent'
+Plugin 'ejamesc/JavaScript-Indent'
 Plugin 'elzr/vim-json'
 Plugin 'majutsushi/tagbar'
 Plugin 'marijnh/tern_for_vim'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 " .vimrc commands
@@ -94,7 +95,7 @@ set list
 set listchars=tab:\|\ 
 
 "Parenthesis Completion
-inoremap {<CR>  {<CR>}<Esc>O
+"inoremap {<CR>  {<CR>}<Esc>O
 
 "Leader functions
 nnoremap <leader>v V`]
