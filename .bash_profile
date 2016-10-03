@@ -14,6 +14,9 @@ export PATH="/usr/local/sbin:$PATH"
 # Load .bashrc if it exists
 test -f ~/.bashrc && source ~/.bashrc
 
+# temporarily add arcanist shit
+export PATH="$PATH:/opt/phab/arcanist/bin"
+
 # Load in the git branch prompt script
 source ~/.vim/.git-prompt.sh
 # Set git branch display
@@ -28,6 +31,11 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Enable brew bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
+fi
+
+# Enable git bash completion
+if [ -f ~/.git-completion.bash  ]; then
+    . ~/.git-completion.bash
 fi
 
 # Set the default ruby via chruby
@@ -52,6 +60,9 @@ export LANG=en_US.UTF-8
 # Set aliases
 alias webfac="ssh webfac"
 alias fcs="ssh fcs"
+alias mig="migrate -url postgres://metacogdev:metacogdev@localhost/metacogdev\?sslmode=disable -path $GOPATH/src/bitbucket.org/ejames/metacog/migrations"
+alias wip="git commit -a -m WIP"
+alias squish="git status && git commit -a --amend -C HEAD"
 
 alias b="bundle"
 alias bi="b install --path vendor"

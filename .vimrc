@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Vundle bundles
 Plugin 'mileszs/ack.vim'
+" Unmaintained - should switch to ctrlpvim/ctrlp
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -149,7 +150,7 @@ let g:go_fmt_command = "goimports"
 
 "Set ctrl-p to ignore Godeps folder
 let g:ctrlp_custom_ignore = {
-  \  'dir': 'Godeps$',
+  \  'dir': '(Godeps|vendor)$',
   \  'file': '\w*[\/]tags$',
   \ }
 
