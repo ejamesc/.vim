@@ -117,6 +117,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 "Displays interfaces that are implemented by word under cursor
 au FileType go nmap <Leader>n <Plug>(go-implements)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>r <Plug>(go-referrers)
 
 "Split options
 set splitbelow

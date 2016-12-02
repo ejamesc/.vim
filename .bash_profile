@@ -38,6 +38,9 @@ if [ -f ~/.git-completion.bash  ]; then
     . ~/.git-completion.bash
 fi
 
+# Cask broke stuff because they decided to move the Caskroom location.
+export HOMEBREW_CASK_OPTS="--caskroom=/opt/homebrew-cask/Caskroom"
+
 # Set the default ruby via chruby
 chruby ruby-2.1.2
 
@@ -74,3 +77,5 @@ alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
 alias dnsclear="sudo killall -HUP mDNSResponder"
 alias rds="redis-server /usr/local/etc/redis.conf"
 alias ns='nosetests -sd'
+alias pgstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pgstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
