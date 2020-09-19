@@ -199,9 +199,6 @@ set bs=2
 " Prolog file detection, because Razvan
 au BufRead,BufNewFile *.pro set filetype=prolog
 
-" Powerline settings
-let g:Powerline_symbols = 'fancy'
-
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
     let line2 = getline(a:n2)
@@ -235,5 +232,5 @@ noremap <silent> <c-j> :call <SID>swap_down()<CR>
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
-let $PYTHONPATH="/usr/local/lib/python2.7/" 
-set pythondll="/usr/local/Cellar/python@2/2.7.14_3/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib"
+" let $PYTHONPATH="/usr/local/lib/python2.7/" 
+" set pythondll="/usr/local/Cellar/python@2/2.7.14_3/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib"
