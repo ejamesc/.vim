@@ -9,7 +9,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Vundle bundles
 Plugin 'mileszs/ack.vim'
-" Unmaintained - should switch to ctrlpvim/ctrlp
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -18,7 +17,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-rails'
 Plugin 'tristen/vim-sparkup'
 Plugin 'tpope/vim-surround'
@@ -33,6 +31,9 @@ Plugin 'elzr/vim-json'
 Plugin 'majutsushi/tagbar'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'vim-airline/vim-airline'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 " .vimrc commands
@@ -111,11 +112,12 @@ nnoremap <leader>a :Ack
 " Go leader functions
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>c <Plug>(go-coverage-browser)
 "Display type information for word under cursor
 au FileType go nmap <Leader>i <Plug>(go-info)
 "Displays interfaces that are implemented by word under cursor
 au FileType go nmap <Leader>n <Plug>(go-implements)
+au FileType go nmap <Leader>m <Plug>(go-metalinter)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>r <Plug>(go-referrers)
 
@@ -133,14 +135,19 @@ nnoremap <leader>je :TernRename<cr>
 "Tagbar options
 nmap <leader>h :TagbarToggle<CR>
 
+"Airline options
+let g:airline_highlighting_cache=1 "perf reasons
+
 "Syntastic options
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--ignore="E501,E302,E261,E701,E241,E126,E127,E128,W801"'
+let g:syntastic_go_checkers = ['go', 'govet']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = "✠"
 let g:syntastic_warning_symbol = '!'
-" We redirect output of go build to a tmpdir
-let g:syntastic_go_go_build_args = "-o $TMPDIR"
+let g:syntastic_style_warning_symbol = '≈'
 
 "Setting ack.vim to use ag
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -148,12 +155,14 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Go modifications
 " Automatically run goimports to add imports post-save
 let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
 
 "Set ctrl-p to ignore Godeps folder
 let g:ctrlp_custom_ignore = {
-  \  'dir': '(Godeps|vendor)$',
+  \  'dir': '*/Godeps$\|vendor$\|node_modules$\|dist\|dev\|*.pyc\|deployment/roles/deploy/files/build$',
   \  'file': '\w*[\/]tags$',
   \ }
+set wildignore+=*/node_modules/*
 
 " Python modifications
 " Smart indenting
@@ -226,4 +235,5 @@ noremap <silent> <c-j> :call <SID>swap_down()<CR>
 autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
 highlight def link rubyRspec Function
 
-
+let $PYTHONPATH="/usr/local/lib/python2.7/" 
+set pythondll="/usr/local/Cellar/python@2/2.7.14_3/Frameworks/Python.framework/Versions/2.7/lib/libpython2.7.dylib"
