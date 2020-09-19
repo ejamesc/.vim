@@ -10,7 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 " Vundle bundles
 Plugin 'mileszs/ack.vim'
 " Unmaintained - should switch to ctrlpvim/ctrlp
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
