@@ -18,7 +18,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'groenewege/vim-less'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
-Plugin 'tristen/vim-sparkup'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}  
 Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'xolox/vim-misc'
@@ -159,7 +159,7 @@ let g:go_list_type = "quickfix"
 
 "Set ctrl-p to ignore Godeps folder
 let g:ctrlp_custom_ignore = {
-  \  'dir': '*/Godeps$\|vendor$\|node_modules$\|dist\|dev\|*.pyc\|deployment/roles/deploy/files/build$',
+  \  'dir': '*/Godeps$\|vendor$\|node_modules$\|venv\|dist\|dev\|*.pyc\|deployment/roles/deploy/files/build$',
   \  'file': '\w*[\/]tags$',
   \ }
 set wildignore+=*/node_modules/*
